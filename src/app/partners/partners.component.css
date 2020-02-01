@@ -1,0 +1,53 @@
+.partner-logo {
+  margin: 1.5rem;
+  width: auto;
+  height: 150px;
+}
+
+.card-text {
+  background-color: #222222;
+}
+
+.card-become-partner-form {
+  background-color: #EDEDED;
+}
+
+.partnership-form-input {
+  border-radius: 4rem;
+}
+
+.privacy-disclaimer {
+  font-size: 0.75rem;
+}
+
+.partnership-form-submit {
+  border-radius: 4rem !important;
+  border-width: 2px !important;
+  border-color: white;
+  background-color: #e61b1b;
+  color: white;
+  height: fit-content;
+}
+
+.partnership-form-submit:hover {
+  background-color: #c71616;
+}
+
+.partnership-form-submit:disabled {
+  pointer-events: none;
+}
+
+.card-image {
+  height: auto;
+}
+
+@media (min-width: 992px) {
+  .card-text {
+    width: 90%;
+  }
+
+  .card-image {
+    width: 90%;
+    min-width: 520px;
+  }
+}

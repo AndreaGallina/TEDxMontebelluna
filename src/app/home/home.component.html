@@ -1,0 +1,102 @@
+<div class="video-player">
+  <vg-player>
+    <vg-overlay-play></vg-overlay-play>
+    <vg-buffering></vg-buffering>
+    <vg-controls [vgAutohide]="true" [vgAutohideTime]="1.5">
+      <div class="row w-100 justify-content-end">
+        <vg-mute></vg-mute>
+        <vg-volume></vg-volume>
+        <vg-fullscreen></vg-fullscreen>
+      </div>
+    </vg-controls>
+    <video [vgMedia]="media" #media id="singleVideo" preload="none" poster="assets/img/VideoHomePoster.jpg">
+      <source src="assets/video/VideoHome.mp4" type="video/mp4">
+    </video>
+  </vg-player>
+</div>
+<div class="w-100 red-band text-white">
+  <div style="min-height: 120px"></div>
+<!--  <div class="w-100 text-center pt-4 pb-4 m-0 ">-->
+<!--    Partecipa al <b class="raleway-bold">TEDxMontebelluna 2020</b> &nbsp; &nbsp;-->
+<!--    <button class="btn btn-outline-light red-band-btn mt-2 mb-2 pt-2 pb-2">-->
+<!--      <b class="raleway-bold">-->
+<!--        &nbsp;&nbsp;&nbsp;-->
+<!--        Prenota il tuo biglietto-->
+<!--        &nbsp;&nbsp;&nbsp;-->
+<!--      </b>-->
+<!--    </button>-->
+<!--  </div>-->
+</div>
+
+<div class="main-content p-5">
+  <div class="d-flex flex-wrap flex-lg-nowrap justify-content-center align-items-center h-100">
+    <div class="card-text h-100 d-flex flex-column justify-content-between">
+      <div class="card-text-title headline">
+        <span class="text-red">Rivivi le idee</span>
+          delle
+          precedenti
+          edizioni
+      </div>
+      <div class="card-text-description">
+        <br>
+        <span>
+          Ti sei perso qualche talk delle precedenti edizioni?
+          Finalmente ora puoi rivedere tutte quelle che vuoi, e
+          quante volte vuoi. Clicca il tasto qui sotto, scegli la tua
+          preferita e buona visione!
+        </span>
+      </div>
+      <div class="text-right mt-5">
+        <a [routerLink]="'/speakers'" class="btn card-button px-5 mx-1 raleway-bold">Scopri di più</a>
+      </div>
+    </div>
+    <img id="first-card-img"
+         class="card-image"
+         src="assets/img/Civiero_800x800.png"
+         inViewport
+         [inViewportOptions]="{ threshold: 0.2 }"
+         (inViewportAction)="onIntersection($event)"
+         [@fadeInRight]="elementInViewport['first-card-img'] ? 'visible' : 'hidden'"
+    >
+  </div>
+</div>
+
+<div class="main-content p-5">
+  <div class="d-flex flex-wrap-reverse flex-lg-nowrap justify-content-center align-items-center h-100">
+    <img id="second-card-img"
+         class="card-image-reverse"
+         src="assets/img/TED_01.jpg"
+         inViewport
+         [inViewportOptions]="{ threshold: 0.2 }"
+         (inViewportAction)="onIntersection($event)"
+         [@fadeInLeft]="elementInViewport['second-card-img'] ? 'visible' : 'hidden'"
+    >
+    <div class="card-text-reverse h-100 d-flex flex-column justify-content-between">
+      <div class="card-text-title headline">
+        Cos'è il
+        <span class="text-red">TED</span>
+      </div>
+      <div class="card-text-description">
+        <br>
+        <span>
+          Il TED (acronimo per Technology, Entertainment,
+          Design) è un'organizzazione noproft che mette in piedi
+          eventi con l’obiettivo di far incontrare le idee più
+          stupefacenti e innovative del pensiero locale e globale.
+          <br>
+          <br>
+          “Ideas worth spreading”, idee che meritano di essere
+          diffuse, è il motto e la mission di TED. Le idee che
+          circolano hanno la forza di cambiare il comportamento
+          e la vita delle persone e il modo in cui si relazionano
+          l’una con l’altra, creando dei network che a loro volta
+          generano altre idee.
+        </span>
+      </div>
+      <div class="text-right mt-5">
+        <a [routerLink]="'/about'" class="btn card-button px-5 mx-1 raleway-bold">Scopri di più</a>
+      </div>
+    </div>
+  </div>
+</div>
+

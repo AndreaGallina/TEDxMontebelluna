@@ -1,0 +1,39 @@
+.contact-us-form-input {
+  border-radius: 4rem;
+  background-color: #EDEDED;
+}
+
+.contact-us-form-textarea {
+  height: 300px;
+  border-radius: 1rem;
+  background-color: #EDEDED;
+}
+
+.contact-us-form-submit {
+  border-radius: 4rem !important;
+  border-width: 2px !important;
+  border-color: white;
+  background-color: #e61b1b;
+  color: white;
+  height: fit-content;
+}
+
+.contact-us-form-submit:hover {
+  background-color: #c71616;
+}
+
+.contact-us-form-submit:disabled {
+  pointer-events: none;
+}
+
+.contact-us-form-submit-tooltip-container {
+  height: fit-content;
+}
+
+.privacy-disclaimer {
+  font-size: 0.75rem;
+}
+
+.container {
+  padding-bottom: 8rem !important;
+}

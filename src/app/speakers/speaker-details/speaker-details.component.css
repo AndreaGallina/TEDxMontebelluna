@@ -1,0 +1,19 @@
+.talk-title {
+  font-size: 36px;
+  line-height: normal;
+  font-family: Raleway-Italic;
+}
+
+.suggested-talks {
+  width: 100% !important;
+  max-width: 990px;
+}
+
+.suggested-talks-headline {
+  font-size: 36px;
+}
+
+.suggested-talks-item {
+}
+
+

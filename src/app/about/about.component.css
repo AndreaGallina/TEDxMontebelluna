@@ -1,0 +1,79 @@
+.card {
+  border: 0;
+}
+
+/* Overrides */
+.rounded-circle {
+  border-width: 2px !important;
+  border-color: #e61b1b !important;
+  line-height: 30px;
+  font-size: 24px;
+}
+
+.circle-medium {
+  width: 200px;
+  height: 200px;
+}
+
+.circle-small {
+  width: 170px;
+  height: 170px;
+}
+
+.circle-big {
+  width: 250px;
+  height: 250px;
+}
+
+.counter {
+font-size: 50px;
+font-weight: bold;
+}
+
+.third-circle-world-chart {
+  position: relative;
+  top: -27px;
+  left: 48px;
+}
+
+.third-circle-italy-chart {
+  position: relative;
+  top: -58px;
+  left: 54px;
+}
+
+@media (max-width: 991px) {
+  .rounded-circle {
+    font-size: 12px;
+    line-height: normal;
+  }
+
+  .circle-medium {
+    width: 100px;
+    height: 100px;
+  }
+
+  .circle-small {
+    width: 85px;
+    height: 85px;
+  }
+
+  .circle-big {
+    width: 100px;
+    height: 100px;
+  }
+
+  .counter {
+    font-size: 25px;
+  }
+
+  .third-circle-world-chart {
+    top: -15px;
+    left: 38px;
+  }
+
+  .third-circle-italy-chart {
+    top: -13px;
+    left: -1px;
+  }
+}

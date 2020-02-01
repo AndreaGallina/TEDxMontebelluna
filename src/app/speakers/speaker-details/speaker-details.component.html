@@ -1,0 +1,95 @@
+<div class="img-jumbotron">
+  <img class="img-fluid mx-auto d-block" [src]="speaker.jumbotronImage"/>
+</div>
+
+<div class="w-100 red-band text-white">
+  <div style="min-height: 120px"></div>
+<!--  <div class="w-100 text-center pt-4 pb-4 m-0 ">-->
+<!--    Partecipa al <b class="raleway-bold">TEDxMontebelluna 2020</b> &nbsp; &nbsp;-->
+<!--    <button class="btn btn-outline-light red-band-btn mt-2 mb-2 pt-2 pb-2">-->
+<!--      <b class="raleway-bold">-->
+<!--        &nbsp;&nbsp;&nbsp;-->
+<!--        Prenota il tuo biglietto-->
+<!--        &nbsp;&nbsp;&nbsp;-->
+<!--      </b>-->
+<!--    </button>-->
+<!--  </div>-->
+</div>
+
+<div class="main-content p-5">
+  <div class="d-flex flex-wrap flex-lg-nowrap justify-content-center align-items-center h-100">
+    <div class="card-text h-100 d-flex flex-column justify-content-between">
+      <div class="card-text-title headline">
+        <span class="text-red">{{speaker.name}} {{speaker.surname}}</span>
+        <br>
+        <div class="talk-title">{{speaker.talkTitle}}</div>
+      </div>
+      <div class="card-text-description">
+        <br>
+        <span [innerHTML]="speaker.description">
+        </span>
+      </div>
+    </div>
+    <img id="first-card-img"
+         class="card-image"
+         [src]="speaker.cardImage"
+         inViewport
+         [inViewportOptions]="{ threshold: 0.2 }"
+         (inViewportAction)="onIntersection($event)"
+         [@fadeInRight]="elementInViewport['first-card-img'] ? 'visible' : 'hidden'"
+    >
+  </div>
+</div>
+<div class="container mt-5">
+  <div class="d-flex justify-content-center">
+    <h1 class="headline">
+      Guarda
+      <span class="text-red">
+        la sua talk
+      </span>
+    </h1>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center my-5">
+  <youtube-player
+    [videoId]="speaker.videoId"
+    [width]="videoWidth"
+    [height]="videoHeight"
+    suggestedQuality="highres"
+    (ready)="onYoutubePlayerReady()">
+  </youtube-player>
+</div>
+
+<div class="d-flex justify-content-center m-5">
+  <div class="suggested-talks" #suggestedTalks>
+    <div class="suggested-talks-headline">
+      Potrebbe
+      <span class="text-red">
+        interessarti anche
+      </span>
+    </div>
+    <div class="border-bottom border-dark"></div>
+    <div class="row">
+      <div class="suggested-talks-item col-md-4 pt-4 d-flex flex-wrap" *ngFor="let featuredSpeaker of featuredSpeakers">
+        <img class="suggested-talks-item-thumbnail img-fluid w-100" [src]="'https://img.youtube.com/vi/' + featuredSpeaker.videoId + '/0.jpg'">
+        <div class="px-2 px-md-0">
+          <div class="suggested-talks-item-title pt-2">
+            <span class="text-red raleway-bold">{{featuredSpeaker.talkTitle}}</span>
+            <br>
+            <span class="raleway-italic">di {{featuredSpeaker.name}} {{featuredSpeaker.surname}}</span>
+          </div>
+          <div class="suggested-talks-item-description pt-2">
+          <span>{{getShortenedTalkDescription(featuredSpeaker.description)}}[...]</span>
+          </div>
+        </div>
+        <div class="suggested-talks-item-button mt-3 w-100">
+          <a [routerLink]="'../' + getSpeakerId(featuredSpeaker)" class="btn btn-block card-button px-5 py-2 raleway-bold" (click)="onFeaturedSpeakerClick()">Scopri di più</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

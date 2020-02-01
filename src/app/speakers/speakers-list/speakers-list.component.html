@@ -1,0 +1,70 @@
+<div class="video-player">
+  <vg-player>
+    <vg-overlay-play></vg-overlay-play>
+    <vg-buffering></vg-buffering>
+    <vg-controls [vgAutohide]="true" [vgAutohideTime]="1.5">
+      <div class="row w-100 justify-content-end">
+        <vg-mute></vg-mute>
+        <vg-volume></vg-volume>
+        <vg-fullscreen></vg-fullscreen>
+      </div>
+    </vg-controls>
+    <video [vgMedia]="media" #media id="singleVideo" preload="none" poster="assets/img/VideoSpeakersPoster.jpg">
+      <source src="assets/video/VideoSpeaker.mp4" type="video/mp4">
+    </video>
+  </vg-player>
+</div>
+<div class="w-100 red-band text-white">
+  <div style="min-height: 120px"></div>
+<!--  <div class="w-100 text-center pt-4 pb-4 m-0">-->
+<!--    Partecipa al <b class="raleway-bold">TEDxMontebelluna 2020</b> &nbsp; &nbsp;-->
+<!--    <button class="btn btn-outline-light red-band-btn mt-2 mb-2 pt-2 pb-2">-->
+<!--      <b class="raleway-bold">-->
+<!--        &nbsp;&nbsp;&nbsp;-->
+<!--        Prenota il tuo biglietto-->
+<!--        &nbsp;&nbsp;&nbsp;-->
+<!--      </b>-->
+<!--    </button>-->
+<!--  </div>-->
+</div>
+
+<!--<div class="m-5 d-flex flex-wrap justify-content-center">-->
+<!--  <div class="card" *ngFor="let speaker of getCurrentEditionSpeakers(); index as speakerId">-->
+<!--    <a [routerLink]="speakerId"><img class="card-img" [src]="speaker.speakersListImage">-->
+<!--      <div class="speaker-card-icon"></div>-->
+<!--      <div class="text-center w-100 mt-2">-->
+<!--    <span class="speaker-card-description">-->
+<!--      <span class="text-red">{{speaker.talkTitle}}</span>-->
+<!--      <br>-->
+<!--      {{speaker.name}} {{speaker.surname}}-->
+<!--    </span>-->
+<!--      </div>-->
+<!--    </a>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="container mt-5">
+  <div class="d-flex justify-content-center">
+    <h1 class="mt-5 headline">
+      Nelle
+      <span class="text-red">
+        precedenti edizioni
+      </span>
+    </h1>
+  </div>
+</div>
+<div class="mx-5 mb-5 mt-2 d-flex flex-wrap justify-content-center">
+  <div class="card" *ngFor="let speaker of getPastEditionsSpeakers(); index as speakerId">
+    <a [routerLink]="speakerId+12">
+      <img class="card-img" [src]="speaker.speakersListImage">
+      <div class="speaker-card-icon"><img class="speaker-card-icon-img" [src]="getEditionIconForSpeaker(speaker)"></div>
+      <div class="text-center w-100 mt-2">
+      <span class="speaker-card-description">
+        <span class="text-red raleway-bold">{{speaker.talkTitle}}</span>
+        <br>
+        {{speaker.name | uppercase }} {{speaker.surname | uppercase }}
+      </span>
+      </div>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,244 @@
+<div class="video-player">
+  <vg-player>
+    <vg-overlay-play></vg-overlay-play>
+    <vg-buffering></vg-buffering>
+    <vg-controls [vgAutohide]="true" [vgAutohideTime]="1.5">
+      <div class="row w-100 justify-content-end">
+        <vg-mute></vg-mute>
+        <vg-volume></vg-volume>
+        <vg-fullscreen></vg-fullscreen>
+      </div>
+    </vg-controls>
+    <video [vgMedia]="media" #media id="singleVideo" preload="none" poster="assets/img/VideoAboutTEDPoster.jpg">
+      <source src="assets/video/VideoAboutTEDx.mp4" type="video/mp4">
+    </video>
+  </vg-player>
+</div>
+<div class="w-100 red-band text-white">
+  <div style="min-height: 120px"></div>
+<!--  <div class="w-100 text-center pt-4 pb-4 m-0">-->
+<!--    Partecipa al <b class="raleway-bold">TEDxMontebelluna 2020</b> &nbsp; &nbsp;-->
+<!--    <button class="btn btn-outline-light red-band-btn mt-2 mb-2 pt-2 pb-2">-->
+<!--      <b class="raleway-bold">-->
+<!--        &nbsp;&nbsp;&nbsp;-->
+<!--        Prenota il tuo biglietto-->
+<!--        &nbsp;&nbsp;&nbsp;-->
+<!--      </b>-->
+<!--    </button>-->
+<!--  </div>-->
+</div>
+
+<div class="main-content p-5">
+  <div class="d-flex flex-wrap-reverse flex-lg-nowrap justify-content-center align-items-center h-100">
+    <img id="first-card-img"
+         class="card-image-reverse"
+         src="assets/img/TED_01.jpg"
+         inViewport
+         [inViewportOptions]="{ threshold: 0.2 }"
+         (inViewportAction)="onIntersection($event)"
+         [@fadeInLeft]="elementInViewport['first-card-img'] ? 'visible' : 'hidden'"
+    >
+    <div class="card-text-reverse h-100 d-flex flex-column justify-content-center">
+      <div class="card-text-title headline">
+        Cos'è il
+        <span class="text-red">TED</span>
+      </div>
+      <div class="card-text-description">
+        <br>
+        <span>
+          Il TED (acronimo per Technology, Entertainment,
+          Design) è un'organizzazione noproft che mette in piedi
+          eventi con l’obiettivo di far incontrare le idee più
+          stupefacenti e innovative del pensiero locale e globale.
+          <br>
+          <br>
+          “Ideas worth spreading”, idee che meritano di essere
+          diffuse, è il motto e la mission di TED. Le idee che
+          circolano hanno la forza di cambiare il comportamento
+          e la vita delle persone e il modo in cui si relazionano
+          l’una con l’altra, creando dei network che a loro volta
+          generano altre idee.
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main-content p-5">
+  <div class="d-flex flex-wrap flex-lg-nowrap justify-content-center align-items-center h-100">
+    <div class="card-text h-100 d-flex flex-column justify-content-center">
+      <div class="card-text-title headline">
+        Far
+        <span class="text-red">circolare le idee</span>
+      </div>
+      <div class="card-text-description">
+        <br>
+        <span>
+          TED è un evento annuale che raggruppa grandi
+          pensatori di tutto il mondo per condividere idee che
+          contano in diverse disciplina: tecnologia, divertimento,
+          scienza, design, discipline umanistiche, affari, sviluppo.
+          <br>
+          <br>
+          L’ex presidente USA Bill Clinton, il fondatore di Microsoft
+          Bill Gates, James Dewey Watson, premio Nobel per la
+          scoperta della struttura del DNA. E poi Arianna
+          Huffington, fondatrice dell’Huffington Post, J.K. Rowling,
+          autrice della saga di Harry Potter, il regista J.J. Abrams,
+          l’artista Marina Abramović: questi sono solo alcuni dei
+          nomi degli speaker che hanno dato il loro contributo
+          alle conferenze TED.
+        </span>
+      </div>
+    </div>
+    <img id="second-card-img"
+         class="card-image"
+         src="assets/img/TED_02.jpg"
+         inViewport
+         [inViewportOptions]="{ threshold: 0.2 }"
+         (inViewportAction)="onIntersection($event)"
+         [@fadeInRight]="elementInViewport['second-card-img'] ? 'visible' : 'hidden'"
+    >
+  </div>
+</div>
+
+<div class="main-content p-5">
+  <div class="d-flex flex-wrap-reverse flex-lg-nowrap justify-content-center align-items-center h-100">
+    <img id="third-card-img"
+         class="card-image-reverse"
+         src="assets/img/TED_03.jpg"
+         inViewport
+         [inViewportOptions]="{ threshold: 0.2 }"
+         (inViewportAction)="onIntersection($event)"
+         [@fadeInLeft]="elementInViewport['third-card-img'] ? 'visible' : 'hidden'"
+    >
+    <div class="card-text-reverse h-100 d-flex flex-column justify-content-center">
+      <div class="card-text-title headline">
+        Il
+        <span class="text-red">TEDx</span>
+      </div>
+      <div class="card-text-description">
+        <br>
+        <span>
+          TED ha dato la possibilità di realizzare eventi locali, i
+          TEDx, con l’obiettivo di trasmettere lo spirito e
+          l’esperienza TED a un pubblico sempre più vasto.
+          <br>
+          <br>
+          TEDx è un forum di idee e di incontro costruito intorno a
+          una comunità e a un territorio interessati alla
+          valorizzazione della scienza e della vita dell’uomo. Ecco
+          alcuni degli speaker che negli anni hanno partecipato
+          agli eventi TEDx: la giornalista e scrittrice Mimosa
+          Martini, il divulgatore informatico Salvatore Aranzulla, lo
+          scrittore Alessandro D'Avenia, lo stilista e imprenditore
+          Brunello Cucinelli, l'autore Giulio Rapetti Mogol, l'attore
+          e scrittore Marco Paolini, l'economista Tito Boeri.
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container my-5">
+  <div class="d-flex justify-content-center">
+    <h1 class="my-5 headline">
+      Alcuni
+      <span class="text-red">
+        numeri
+      </span>
+    </h1>
+  </div>
+  <div id="world-chart"
+       class="p-5 text-center card"
+       inViewport
+       [inViewportOptions]="{ threshold: 0.2 }"
+       (inViewportAction)="onIntersection($event)"
+  >
+    <img class="w-100 card-img" src="assets/img/img-world.png"/>
+    <div class="card-img-overlay text-left" [@fadeIn]="elementInViewport['world-chart'] ? 'visible' : 'hidden'">
+      <div class="d-flex align-items-start">
+        <div class="border rounded-circle circle-medium d-flex align-items-center justify-content-end">
+          <div class="text-right mr-lg-4 mr-3">
+            <span #countriesCounter class="counter"></span>
+            <br>
+            <div class="pb-1"></div>
+            <span class="raleway-italic">Paesi
+            <br>
+            coinvolti</span>
+          </div>
+        </div>
+        <div class="border rounded-circle circle-small d-flex align-items-center justify-content-end mt-lg-5 mt-4">
+          <div class="text-right mr-lg-4 mr-3">
+            <span #spokenLanguagesCounter class="counter"></span>
+            <br>
+            <div class="pb-1"></div>
+            <span class="raleway-italic">Lingue
+            <br>
+            parlate</span>
+          </div>
+        </div>
+      </div>
+      <div class="border rounded-circle d-flex align-items-center justify-content-end circle-big third-circle-world-chart">
+        <div class="text-right mr-lg-4 mr-2">
+          <span #tedEventsCounter class="counter"></span>
+          <span class="counter">+</span>
+          <br>
+          <div class="pb-1"></div>
+          <span class="raleway-italic">Eventi TEDx
+            <br>
+            nel mondo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="italy-chart"
+       class="p-5 text-center card"
+       inViewport
+       [inViewportOptions]="{ threshold: 0.2 }"
+       (inViewportAction)="onIntersection($event)"
+  >
+    <img class="w-50 card-img" src="assets/img/img-italy.png"/>
+    <div class="card-img-overlay text-left" [@fadeIn]="elementInViewport['italy-chart'] ? 'visible' : 'hidden'">
+      <div class="d-flex justify-content-center">
+        <div class="border rounded-circle d-flex align-items-center justify-content-end circle-big">
+          <div class="text-right mr-lg-4 mr-3">
+            <span #tedxEventsItalyCounter class="counter"></span>
+            <span class="counter">+</span>
+            <br>
+            <div class="pb-1"></div>
+            <span class="raleway-italic">eventi TEDx
+            <br>
+            in Italia</span>
+          </div>
+        </div>
+        <div class="border rounded-circle d-flex align-items-center justify-content-end ml-1 circle-medium">
+          <div class="text-right mr-lg-4 mr-3">
+            <span #plannedEventsItalyCounter class="counter"></span>
+            <span class="counter">+</span>
+            <br>
+            <div class="pb-1"></div>
+            <span class="raleway-italic">eventi in
+            <br>
+            programma</span>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <div class="border rounded-circle d-flex align-items-center justify-content-end circle-small third-circle-italy-chart">
+          <div class="text-right mr-lg-4 mr-3">
+            <span #involvedCitiesCounter class="counter"></span>
+            <span class="counter">+</span>
+            <br>
+            <div class="pb-1"></div>
+            <span class="raleway-italic">Città
+            <br>
+            coinvolte</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

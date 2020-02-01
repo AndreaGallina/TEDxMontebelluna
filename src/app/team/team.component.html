@@ -1,0 +1,126 @@
+<div class="video-player">
+  <vg-player>
+    <vg-overlay-play></vg-overlay-play>
+    <vg-buffering></vg-buffering>
+    <vg-controls [vgAutohide]="true" [vgAutohideTime]="1.5">
+      <div class="row w-100 justify-content-end">
+        <vg-mute></vg-mute>
+        <vg-volume></vg-volume>
+        <vg-fullscreen></vg-fullscreen>
+      </div>
+    </vg-controls>
+    <video [vgMedia]="media" #media id="singleVideo" preload="none" poster="assets/img/VideoTeamPoster.jpg">
+      <source src="assets/video/VideoTeam.mp4" type="video/mp4">
+    </video>
+  </vg-player>
+</div>
+<div class="w-100 red-band text-white">
+  <div class="w-100 text-center pt-4 pb-4 m-0">
+    Unisciti al <b class="raleway-bold">team</b> &nbsp; &nbsp;
+    <a [routerLink]='"."' [fragment]='"contact-us"' class="btn btn-outline-light red-band-btn mt-2 mb-2 pt-2 pb-2">
+      <b class="raleway-bold">
+        &nbsp;&nbsp;&nbsp;
+        Invia la candidatura
+        &nbsp;&nbsp;&nbsp;
+      </b>
+    </a>
+  </div>
+</div>
+
+<div class="m-5 d-flex flex-wrap justify-content-center">
+  <div class="card m-3" *ngFor="let teamMember of teamMembers">
+    <img class="card-img"  [src]="teamMember.imageUrl">
+    <div class="overlay">
+      <div class="card-overlay-text">
+        <span class="raleway-bold">{{teamMember.name | uppercase }}</span>
+        <br>
+        {{teamMember.role}}
+        <span *ngIf="teamMember.linkedin"></span>
+        <br>
+        <a [href]="teamMember.linkedin" target="_blank">
+          <img class="linkedin-icon mb-1" src="assets/img/icon-in.png">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="join-our-team container my-5" id="contact-us">
+  <div class="d-flex justify-content-center">
+    <h1 class="my-5 headline">
+      Unisciti al
+      <span class="text-red">
+        team
+      </span>
+    </h1>
+  </div>
+
+  <form id="contact-form" method="post" role="form" [formGroup]="contactsForm" (ngSubmit)="onSubmit()">
+    <div class="controls">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <input id="form_name" type="text" name="name" class="form-control contact-us-form-input" placeholder="Nome*" formControlName="firstName">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <input id="form_lastname" type="text" name="surname" class="form-control contact-us-form-input" placeholder="Cognome*" formControlName="lastName">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <input id="form_email" type="email" name="email" class="form-control contact-us-form-input" placeholder="Email*" formControlName="email" [email]="true">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <input id="form_phone" type="email" name="phone" class="form-control contact-us-form-input" placeholder="Numero di telefono" formControlName="phone">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <textarea id="form_message" name="message" class="form-control contact-us-form-textarea" placeholder="Messaggio*" rows="4" formControlName="msg"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center flex-md-nowrap flex-wrap">
+        <ngx-recaptcha2 #captchaElem
+                        [siteKey]="'6LfWq1EUAAAAAHHeSpddiTlCJmMzStQ9uBfqJz7a'"
+                        [useGlobalDomain]="false"
+                        formControlName="recaptcha">
+        </ngx-recaptcha2>
+
+        <div class="form-check form-check-inline px-md-3">
+          <input class="form-check-input align-self-start mt-1" type="checkbox" formControlName="privacy"/>
+          <label class="form-check-label align-self-start privacy-disclaimer">
+            Ho letto e accetto <a href="#">l'informativa sulla privacy</a>
+            per il trattamento dei miei dati personali
+            secondo le norme esposte nel d.lgs. n.196/2003
+          </label>
+        </div>
+
+        <div class="contact-us-form-submit-tooltip-container"
+             placement="top"
+             [ngbTooltip]="contactsForm.invalid ? 'È necessario compilare tutti i campi obbligatori e accettare l\'informativa sulla privacy' : ''">
+          <button type="submit" class="btn contact-us-form-submit raleway-bold py-1 px-5 "
+                  [disabled]="contactsForm.invalid">
+            <span *ngIf="!loading">Invia</span>
+            <div *ngIf="loading" class="sk-chase">
+              <div class="sk-chase-dot"></div>
+              <div class="sk-chase-dot"></div>
+              <div class="sk-chase-dot"></div>
+              <div class="sk-chase-dot"></div>
+              <div class="sk-chase-dot"></div>
+              <div class="sk-chase-dot"></div>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

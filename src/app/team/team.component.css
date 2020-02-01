@@ -1,0 +1,84 @@
+.card {
+  max-height: 300px;
+  max-width: 300px;
+  overflow: hidden;
+  border: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.card-overlay-text {
+  width: 100%;
+  padding: 0 15px;
+  color: white;
+  font-size: 16px;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.linkedin-icon {
+  width: 16px;
+}
+
+
+.partnership-form-input {
+  border-radius: 4rem;
+  background-color: #EDEDED;
+}
+
+.contact-us-form-textarea {
+  height: 300px;
+  border-radius: 1rem;
+  background-color: #EDEDED;
+}
+
+.contact-us-form-input {
+  border-radius: 4rem;
+  background-color: #EDEDED;
+}
+
+.contact-us-form-submit {
+  border-radius: 4rem !important;
+  border-width: 2px !important;
+  border-color: white;
+  background-color: #e61b1b;
+  color: white;
+  height: fit-content;
+}
+
+.contact-us-form-submit:hover {
+  background-color: #c71616;
+}
+
+.contact-us-form-submit:disabled {
+  pointer-events: none;
+}
+
+.contact-us-form-submit-tooltip-container {
+  height: fit-content;
+}
+
+.privacy-disclaimer {
+  font-size: 0.75rem;
+}
+

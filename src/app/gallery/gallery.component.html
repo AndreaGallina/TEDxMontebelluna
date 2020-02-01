@@ -1,0 +1,39 @@
+<div class="img-jumbotron">
+  <img class="img-fluid mx-auto d-block" src="assets/img/img-gallery.jpg"/>
+</div>
+<div class="w-100 red-band text-white">
+  <div style="min-height: 120px"></div>
+<!--  <div class="w-100 text-center pt-4 pb-4 m-0 ">-->
+<!--    Partecipa al <b class="raleway-bold">TEDxMontebelluna 2020</b> &nbsp; &nbsp;-->
+<!--    <button class="btn btn-outline-light red-band-btn mt-2 mb-2 pt-2 pb-2">-->
+<!--      <b class="raleway-bold">-->
+<!--        &nbsp;&nbsp;&nbsp;-->
+<!--        Prenota il tuo biglietto-->
+<!--        &nbsp;&nbsp;&nbsp;-->
+<!--      </b>-->
+<!--    </button>-->
+<!--  </div>-->
+</div>
+
+<div class="py-5">
+
+  <div class="d-flex justify-content-center">
+    <h1 class="my-5 headline">
+      Gallery
+    </h1>
+  </div>
+
+  <div class="masonry-demo">
+    <ngx-masonry [options]="masonryOptions" [useImagesLoaded]="true">
+      <div ngxMasonryItem class="masonry-item" *ngFor="let image of imagesLoaded; index as imageId" (click)="openImageInLightbox(imageId)">
+        <img [src]="image.src">
+      </div>
+    </ngx-masonry>
+  </div>
+
+</div>
+
+<div inViewport
+     [inViewportOptions]="{ threshold: 0 }"
+     (inViewportAction)="loadMoreImages($event)" style="height: 100px">
+</div>
