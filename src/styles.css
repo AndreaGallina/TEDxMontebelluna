@@ -1,1 +1,228 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~@angular/cdk/overlay-prebuilt.css';
+
+@font-face {
+  font-family: Raleway-Medium;
+  src: url("./assets/fonts/Raleway-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Raleway-Regular;
+  src: url("./assets/fonts/Raleway-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Raleway-Bold;
+  src: url("./assets/fonts/Raleway-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Raleway-Italic;
+  src: url("./assets/fonts/Raleway-Italic.ttf") format("truetype");
+}
+
+.raleway-medium {
+  font-family: Raleway-Medium !important;
+}
+
+.raleway-regular {
+  font-family: Raleway-Regular !important;
+}
+
+.raleway-bold {
+  font-family: Raleway-Bold !important;
+}
+
+.raleway-italic {
+  font-family: Raleway-Italic !important;
+}
+
+body {
+  font-family: Raleway-Regular !important;
+}
+
+.img-jumbotron {
+  max-height: 600px;
+  /*min-width: 1000px;*/
+  overflow: hidden;
+  background-color: black;
+}
+
+.red-band {
+  font-size: 24px;
+  background-color: #e61b1b;
+}
+
+.text-red {
+  color: #e61b1b !important;
+}
+
+.red-band-btn {
+  font-size: 24px;
+  border-radius: 4rem !important;
+  border-width: 2px !important;
+}
+
+/* ----- Stili card ----- */
+.main-content {
+  height: 700px;
+}
+
+.card-text-reverse,.card-text {
+  background-color: #EDEDED;
+}
+
+.card-text-title {
+  line-height: 3.5rem;
+}
+
+.card-text-description {
+  font-size: 14px;
+}
+
+.card-image-reverse,.card-image {
+  position: relative;
+  height: 500px;
+}
+
+.card-button {
+  border-radius: 4rem !important;
+  border-width: 2px !important;
+  border-color: white;
+  background-color: #e61b1b;
+  color: white;
+}
+
+@media (min-width: 992px)  {
+  .card-text {
+    padding: 3rem 12rem 3rem 3rem !important;
+    margin-left: 150px;
+    width: 650px;
+    min-width: 600px;
+  }
+
+  .card-text-reverse {
+    padding: 3rem 3rem 3rem 12rem !important;
+    margin-right: 150px;
+    width: 650px;
+    min-width: 600px;
+  }
+
+  .card-image {
+    left: -150px;
+  }
+
+  .card-image-reverse {
+    left: 150px;
+  }
+}
+
+/*
+  Al di sopra di questa larghezza setto una altezza fissa per il player video per evitare che si estenda in maniera
+  spropositata.
+ */
+@media (min-width: 1366px) {
+  .video-player {
+    height: 600px;
+  }
+}
+
+@media (max-width: 991px)  {
+  .card-text-reverse,.card-text {
+    padding: 3rem 3rem 8rem 3rem !important;
+    min-width: 376px;
+  }
+
+  .card-image-reverse,.card-image {
+    top: -50px;
+    max-width: 90%;
+    height: auto;
+  }
+
+  .main-content {
+    height: auto;
+  }
+}
+
+/* ----- Stili card ----- */
+
+.headline {
+  font-size: 56px;
+}
+
+vg-controls {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+/*
+  Override lightbox: l'immagine è leggermente decentrata verticalmente quindi metto 4 px di margine in alto
+ */
+.lb-image {
+  margin-top: 4px;
+}
+
+/*
+  Override lightbox: i pulsanti di navigazione devono sempre essere visibli
+ */
+.lb-next,.lb-prev {
+  opacity: 1 !important;
+}
+
+/* <--- Loading spinner --- */
+.sk-chase {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  animation: sk-chase 2.5s infinite linear both;
+}
+
+.sk-chase-dot {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: sk-chase-dot 2.0s infinite ease-in-out both;
+}
+
+.sk-chase-dot:before {
+  content: '';
+  display: block;
+  width: 25%;
+  height: 25%;
+  background-color: #fff;
+  border-radius: 100%;
+  animation: sk-chase-dot-before 2.0s infinite ease-in-out both;
+}
+
+.sk-chase-dot:nth-child(1) { animation-delay: -1.1s; }
+.sk-chase-dot:nth-child(2) { animation-delay: -1.0s; }
+.sk-chase-dot:nth-child(3) { animation-delay: -0.9s; }
+.sk-chase-dot:nth-child(4) { animation-delay: -0.8s; }
+.sk-chase-dot:nth-child(5) { animation-delay: -0.7s; }
+.sk-chase-dot:nth-child(6) { animation-delay: -0.6s; }
+.sk-chase-dot:nth-child(1):before { animation-delay: -1.1s; }
+.sk-chase-dot:nth-child(2):before { animation-delay: -1.0s; }
+.sk-chase-dot:nth-child(3):before { animation-delay: -0.9s; }
+.sk-chase-dot:nth-child(4):before { animation-delay: -0.8s; }
+.sk-chase-dot:nth-child(5):before { animation-delay: -0.7s; }
+.sk-chase-dot:nth-child(6):before { animation-delay: -0.6s; }
+
+@keyframes sk-chase {
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes sk-chase-dot {
+  80%, 100% { transform: rotate(360deg); }
+}
+
+@keyframes sk-chase-dot-before {
+  50% {
+    transform: scale(0.4);
+  } 100%, 0% {
+      transform: scale(1.0);
+    }
+}
+
+/* --- Loading spinner ---> */

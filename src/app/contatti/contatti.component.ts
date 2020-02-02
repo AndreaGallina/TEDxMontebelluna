@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {ToastrService} from 'ngx-toastr';
+import {PrivacyComponent} from '../privacy/privacy.component';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 const SUCCESS_MESSAGE = 'La tua richiesta è stata inviata al nostro team. Sarai ricontattato a breve. Grazie!';
 
@@ -17,7 +19,8 @@ export class ContattiComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
               private http: HttpClient,
-              private toastr: ToastrService) { }
+              private toastr: ToastrService,
+              private modalService: NgbModal) { }
 
   ngOnInit() {
     this.contactsForm = this.formBuilder.group({
@@ -61,10 +64,14 @@ export class ContattiComponent implements OnInit {
         this.toastr.error(response);
       }
       this.loading = false;
-    }, error => {
+    }, () => {
       this.toastr.error('Si è verificato un\'errore, riprova più tardi');
       this.loading = false;
     });
+  }
+
+  openPrivacyModal() {
+    this.modalService.open(PrivacyComponent, { size: 'lg' });
   }
 
 }

@@ -1,0 +1,67 @@
+.header {
+  height: 35px;
+}
+
+.social-icon-a {
+  margin-left: 5px;
+}
+
+.social-icon-img {
+  width: 20px;
+  margin-bottom: 4px;
+}
+
+.social-icon-a-footer {
+  margin: 0 5px 0 5px;
+}
+
+.social-icon-img-footer {
+  width: 25px;
+  margin-top: 4px;
+}
+
+.min-width-90 {
+  min-width: 90%
+}
+
+.navbar {
+  /* Necessario per evitare che la navbar si shrinki negli istanti precedenti al caricamento del logo*/
+  min-height: 140px;
+  font-size: 15px;
+}
+
+.navbar-logo-img {
+  width: 270px;
+  height: auto;
+}
+
+.newsletter {
+
+}
+
+.newsletter-input {
+  padding-bottom: 1.50rem;
+  padding-top: 1.50rem;
+  padding-left: 1.75rem;
+  border-radius: 4rem !important;
+}
+
+.newsletter-btn {
+  padding-bottom: 0.75rem;
+  padding-top: 0.75rem;
+  border-radius: 4rem !important;
+  border-width: 2px !important;
+}
+
+.footer {
+  background-color: black;
+  color: white;
+}
+
+.privacy-disclaimer {
+  font-size: 0.75rem;
+}
+
+.follow-us-footer {
+  font-size: 1.4rem;
+}

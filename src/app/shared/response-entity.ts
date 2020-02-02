@@ -1,4 +1,4 @@
-export class Response {
+export class ResponseEntity {
   status: number;
   body: object;
 }
