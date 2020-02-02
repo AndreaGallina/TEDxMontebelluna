@@ -166,7 +166,7 @@ vg-controls {
   Override lightbox: i pulsanti di navigazione devono sempre essere visibli
  */
 .lb-next,.lb-prev {
-  opacity: 1 !important;
+  opacity: 0.6 !important;
 }
 
 /* <--- Loading spinner --- */
