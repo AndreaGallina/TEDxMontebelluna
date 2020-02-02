@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NgxMasonryOptions} from 'ngx-masonry';
-import {Lightbox, IAlbum} from 'ngx-lightbox';
+import {IAlbum, Lightbox} from 'ngx-lightbox';
 
 const GALLERY_IMAGES_NUMBER = 151;
 const IMAGES_PER_PAGE = 25;
@@ -52,6 +52,6 @@ export class GalleryComponent implements OnInit {
   }
 
   openImageInLightbox(index: number) {
-    this.lightbox.open(this.imagesList, index, { centerVertically: true, disableScrolling: true });
+    this.lightbox.open(this.imagesList, index, { disableScrolling: true });
   }
 }
