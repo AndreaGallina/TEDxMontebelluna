@@ -30,7 +30,7 @@
 
 <div class="main-content p-5">
   <div class="d-flex flex-wrap flex-lg-nowrap justify-content-center align-items-center h-100">
-    <div class="card-text h-100 d-flex flex-column justify-content-between">
+    <div class="card-text h-100 d-flex flex-column justify-content-center">
       <div class="card-text-title headline">
         <span class="text-red">Rivivi le idee</span>
           delle
@@ -46,7 +46,7 @@
           preferita e buona visione!
         </span>
       </div>
-      <div class="text-right mt-5">
+      <div class="text-right mt-3">
         <a [routerLink]="'/speakers'" class="btn card-button px-5 mx-1 raleway-bold">Scopri di più</a>
       </div>
     </div>
@@ -71,7 +71,7 @@
          (inViewportAction)="onIntersection($event)"
          [@fadeInLeft]="elementInViewport['second-card-img'] ? 'visible' : 'hidden'"
     >
-    <div class="card-text-reverse h-100 d-flex flex-column justify-content-between">
+    <div class="card-text-reverse h-100 d-flex flex-column justify-content-center">
       <div class="card-text-title headline">
         Cos'è il
         <span class="text-red">TED</span>
@@ -93,7 +93,7 @@
           generano altre idee.
         </span>
       </div>
-      <div class="text-right mt-5">
+      <div class="text-right mt-3">
         <a [routerLink]="'/about'" class="btn card-button px-5 mx-1 raleway-bold">Scopri di più</a>
       </div>
     </div>

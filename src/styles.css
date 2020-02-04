@@ -74,7 +74,7 @@ body {
 }
 
 .card-text-title {
-  line-height: 3.5rem;
+  line-height: 3rem;
 }
 
 .card-text-description {
@@ -148,7 +148,7 @@ body {
 /* ----- Stili card ----- */
 
 .headline {
-  font-size: 56px;
+  font-size: 48px;
 }
 
 vg-controls {
